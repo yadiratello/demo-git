@@ -1,60 +1,64 @@
 # 			GIT
 
-COMANDOS
--------------
+### COMANDOS
+
 1. Mostrar la version de git instalado
-
+```
   git --version
-
+```
 
 2. Como autenticarme en la terminal.
-  
+```  
   git config --global user.name "nombreUserGitHub"
   
   git config --global user.email "email@gmail.com"
-
+```
 
 3. Como verificar de quien es la maquina(quien esta logueado en esta terminal) obtiene las credenciales(name,email)
-  
+```  
   git config --global -l
-
+```
 
 4. Indicarle a GIT que carpeta sera mi repositorio(proyecto=repositorio)
-  
+```  
   git init
-
---> se creare una carpeta oculta .git
---> borrar la carpeta en caso ya no quiera seguir los cambios de esa carpeta
+```
+* se creare una carpeta oculta .git
+* borrar la carpeta en caso ya no quiera seguir los cambios de esa carpeta
 
 
 5. Como saber cual es el estado(status) actual de mis archivos 
-  
+```  
   git status
-  
--->rojo: no esta siendo controlado
--->verde: si esta siendo controlado
+```
+* rojo: no esta siendo controlado
+* verde: si esta siendo controlado
 
 
 6. Decirle a git que siga los cambios de todo mi repositorio(que tenga el control de todo) 
-  
-  git add . <- siga los cambios de todo mi directorio actual
+```  
+  git add . 
+```  
+* . sigue los cambios de todo mi directorio actual
 
---> al hacer git add . mis archivos pasan a una zona llamada stage
---> stage: es una zona intermediaria en donde estan nuestros archivos listos para ser confirmados.
+* al hacer git add . mis archivos pasan a una zona llamada stage
+
+* stage: es una zona intermediaria en donde estan nuestros archivos listos para ser confirmados.
 
 
 7. Como confirmo los cambios 
---> Aqui ya deja la zona del stage
-  
+* Aqui ya deja la zona del stage
+```  
   git commit -m "Comit Inicial"
+```
 
 -->-m es para indicar un mensaje descriptivo
 
 
 8. Como verificar cual fue la ultima modificacion q se ha hecho de lo q teniamos confirmado
-  
+```  
   git diff
-
+```
 
 9. Como revertir la situacion(ctr+z) a una situacion anterio(mi ultimo commit)
   
