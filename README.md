@@ -146,7 +146,8 @@ reset --soft: vuelve un paso atras de nuestro cambio
 -->300082e1152e3021a593e959871422b0a6833b29(id del archivo a recuperar) se obtiene con git log
 
 
-----------------------------------------	GITIGNORE     ----------------------
+                        	GITIGNORE     
+-----------------------------------------------------
 -->sirve para excluir ciertos archivos de nuestro proyecto q son innecesarios(ejm: archivos de configuracion(ide-config)).
 Para exluirlos solo debemos de crear un archivo con la extension .gitignore y debe de estar al mismo nivel de la carpeta .git
 abrimos este archivo y simplemente guardamos el nombre del archivo que queremos excluir.
