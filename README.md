@@ -4,33 +4,40 @@ COMANDOS
 -------------
 1. Mostrar la version de git instalado
 
-git --version
+  git --version
 
 
 2. Como autenticarme en la terminal.
-git config --global user.name "nombreUserGitHub"
-git config --global user.email "email@gmail.com"
+  
+  git config --global user.name "nombreUserGitHub"
+  
+  git config --global user.email "email@gmail.com"
 
 
 3. Como verificar de quien es la maquina(quien esta logueado en esta terminal) obtiene las credenciales(name,email)
-git config --global -l
+  
+  git config --global -l
 
 
 4. Indicarle a GIT que carpeta sera mi repositorio(proyecto=repositorio)
-git init
+  
+  git init
 
 --> se creare una carpeta oculta .git
 --> borrar la carpeta en caso ya no quiera seguir los cambios de esa carpeta
 
 
 5. Como saber cual es el estado(status) actual de mis archivos 
-git status
+  
+  git status
+  
 -->rojo: no esta siendo controlado
 -->verde: si esta siendo controlado
 
 
 6. Decirle a git que siga los cambios de todo mi repositorio(que tenga el control de todo) 
-git add . <- siga los cambios de todo mi directorio actual
+  
+  git add . <- siga los cambios de todo mi directorio actual
 
 --> al hacer git add . mis archivos pasan a una zona llamada stage
 --> stage: es una zona intermediaria en donde estan nuestros archivos listos para ser confirmados.
@@ -38,17 +45,20 @@ git add . <- siga los cambios de todo mi directorio actual
 
 7. Como confirmo los cambios 
 --> Aqui ya deja la zona del stage
-git commit -m "Comit Inicial"
+  
+  git commit -m "Comit Inicial"
 
 -->-m es para indicar un mensaje descriptivo
 
 
 8. Como verificar cual fue la ultima modificacion q se ha hecho de lo q teniamos confirmado
-git diff
+  
+  git diff
 
 
 9. Como revertir la situacion(ctr+z) a una situacion anterio(mi ultimo commit)
-git checkout
+  
+  git checkout
 
 
 10. ver la lista de cambios(commit) que hemos realizado
@@ -57,63 +67,81 @@ git log
 
 
 11. modificar el contenido de un unico archivo en particular
-git add nombreArchivo.html
-git commit -m "mensaje commit"
+  
+  git add nombreArchivo.html
+  
+  git commit -m "mensaje commit"
 
 
 12. Agregar a la zona del stage un directorio en particular
-git add nombreDirectorio/
+  
+  git add nombreDirectorio/
 
 
 13. Agregar a la zona del stage todo el contenido del directorio css cuyos archivos terminen en la extension .css
-git add css/*.css
+  
+  git add css/*.css
 
 
 14. Si quisiera quitar de la parte stage un archivo en particular o un conjunto de archivos :
-git reset nombreArchivo
-git reset nombreCarpeta/
+  
+  git reset nombreArchivo
+  
+  git reset nombreCarpeta/
 
 
 15. Otra forma de agregar todos los archivos a la parte del stage
-git add -A
-git add --all
+  
+  git add -A
+  
+  git add --all
 
 
 16. Como colocar ALIAS a los comandos de GIT
-git config --global alias.nombreAlias "comandoAReemplazar"
+  
+  git config --global alias.nombreAlias "comandoAReemplazar"
 
 ejm:
-git config --global alias.s "status"
+  
+  git config --global alias.s "status"
 
 
 17. Como modificar el mensaje de mi commit
 Ejm:
-git commit -m "Nueva modificion al ndex" <-- modificar esto
+  
+  git commit -m "Nueva modificion al ndex" <-- modificar esto
 
-git commit --amend -m "Nueva modificacion al index"
+  
+  git commit --amend -m "Nueva modificacion al index"
   
 
 18. Como reenombrar los archivos que ya fueron commiteados en GIT
 -->comando mv(modifica el nombre de mi archivo)
-git mv principal.html princ.html
-git commit -m "Se cambio de nombre al archivo principal.html a princ"
+  
+  git mv principal.html princ.html
+  
+  git commit -m "Se cambio de nombre al archivo principal.html a princ"
 
 
 19. ComoRemover o eliminar un archivo en especifico
 -->comando rm(remove)
-git rm princ.html
-git commit -m "Se Elimino el archivo principal.html"
+  
+  git rm princ.html
+  
+  git commit -m "Se Elimino el archivo principal.html"
 
 
 20. Como borrar un cambio en GIT
 reset --soft: vuelve un paso atras de nuestro cambio
 -->cuando colocas --soft no esta recuperando los elementos. Solo se esta ubicando en ese lugar
-git reset --soft idDelCambioAlCualQuieroRegresar
+  
+  git reset --soft idDelCambioAlCualQuieroRegresar
 -->
 
 
 21. Si queremos q los archivos se recuperen(usar --hard)
-git reset --hard 00082e1152e3021a593e959871422b0a6833b29
+  
+  git reset --hard 00082e1152e3021a593e959871422b0a6833b29
 
 -->300082e1152e3021a593e959871422b0a6833b29(id del archivo a recuperar) se obtiene con git log
 
@@ -146,7 +174,7 @@ cat .gitignore
  
 23. Para crear una nueva rama q viene a ser una bifurcacion de la rama principal, escribios lo sgte:
 
-git branch nombreRama
+  git branch nombreRama
 
 
 
@@ -154,60 +182,68 @@ git branch nombreRama
 -->Por defecto me encuentro en la rama master
 
 24. Ver mas detallado mis commits y mis ramas
-git log --oneline --decorate --all --graph
+  
+  git log --oneline --decorate --all --graph
 
 
 
 25. Como cambiar de rama?
 
-git checkout nombreRama
+  
+  git checkout nombreRama
 
 ejm:
 lctuser@lctuster MINGW64 /d/CURSO_GIT/sitio_web1 (rama_funcionalidad)
-
-git add .
-git commit -m "Primer commit de esta rama"
+  
+  git add .
+  
+  git commit -m "Primer commit de esta rama"
 
 -->Al hacer el commit en la rama_funcionalidad esos archivos ahora le pertenecen a la rama en la q se hizo el commit
 
 
 26. Si quiero regresar a la rama anterior q es(master)
-git checkout master
+  
+  git checkout master
 
 
 -->Como trabajar en la union de la rama principal con la rama secundaria
 -->queremos integrar la rama_funcionalidad con la rama principal(master)
 -->1. primero nos dirijimos a la rama principal 
-git checkout master
+  
+  git checkout master
 
 -->2. Aqui hacemos un git merge con el nombre de la rama q queremos unir
-git merge rama_funcionalidad
+  
+  git merge rama_funcionalidad
 
 -->De esta manera ya estan unidad ambas ramas, la rama master con la rama sencundaria. Por lo tanto la rama_funcionalidad ya no es necesaria tenerla y la podemos eliminar. 
-
-git branch -d rama_funcionalidad
+  
+  git branch -d rama_funcionalidad
 
 --> Ahora solo tenemos la rama master con el commit de la rama_funcionalidad
-git log --oneline --decorate --all --graph
+  
+  git log --oneline --decorate --all --graph
 
 
 
 --> Si quisieramos crear una nueva rama pero que apenas la cree me rediriga(cambie) a ella
 
-git checkout -b rama_opcion
+  git checkout -b rama_opcion
+  
 --> -b = branch
 el prompt se parecera a esto:
 lctuser@lctuster MINGW64 /d/CURSO_GIT/sitio_web1 (rama_opcion)
 
-git merge rama_opcion
+  git merge rama_opcion
 
-git branch -d rama_opcion
+  git branch -d rama_opcion
 
 
 
 ------ MERGE con Conflictos 
 
-git merge nueva_rama
+  git merge nueva_rama
 
 -->saldra este mensaje:
 Auto-merging nuevaOpcion.html
@@ -222,11 +258,13 @@ Automatic merge failed; fix conflicts and then commit the result.
 *Una etiqueta es como nombrar a un commit que tenemos a lo largo de nuestras ramas(ejm:version1, version1.1, alpha, beta, etc). *
 
 --> Como Crear una etiqueta en GIT?
-git tag nombre_etiqueta
+  
+  git tag nombre_etiqueta
 
 
 -->Como Ver las etiquetas creadas?
-git tag
+  
+  git tag
 
 
 -->al hacer un git 
@@ -234,11 +272,13 @@ log --oneline --decorate --all --graph vemos q nuestra rama presenta el  nombre 
 
 
 -->Si quisieramos eliminar esa etiqueta
-git  tag -d nombre_etiqueta
+  
+  git  tag -d nombre_etiqueta
 
 
 -->A veces es mejor indicar un mensaje adicional que represente que se hizo en esa etiqueta 
-git tag -a v1.1.0 -m "version 2"
+  
+  git tag -a v1.1.0 -m "version 2"
 
 -->En el tema de versionamiento el "v" significa version, el numero inicial significa el tipo de version mayor, el segundo numero significa un cambio moderado, el tercero significa un cambio mas pequeño y minimo. 
 ejm:
@@ -246,21 +286,24 @@ v2.0.0 <- ha habido un cambio importante y grande
 v1.1.0 <- ha habido un cambio moderado 
 v1.0.1 <- ha habido un cambio pequeño inperseptible para el usuario 
 
-git tag -a v1.0.0 -m "version inicial"
+  git tag -a v1.0.0 -m "version inicial"
 
 -->-m es para agregar un mensaje descriptivo
 
 
 --> Como mostrar todo el detalle que hay hasta ese commit
-git show v1.0.0
+  
+  git show v1.0.0
 
 
 --> que pasaria si tuviesemos un commit con anterioridad y ese commit para mi represento una version previa que tmb hubiese querido etiquetarla
 Se podria hacer lo siguiente:
-git log --oneline --decorate --all --graph 
+  
+  git log --oneline --decorate --all --graph 
 
 -->con el codigo de arriba obtengo todos mis commits y veo en donde quiero etiquetar como otro cambio importante para mi y quiero ponerle una etiqueta. Copio el identificador de ese commit (ejm:99f53fc) y escribo lo siguiente en la terminal:
-git tag -a v0.0.1 99f53fc -m "version beta"
+  
+  git tag -a v0.0.1 99f53fc -m "version beta"
 
 -->el 99f53fc es un idntificador de uno de mis commits al cual quiero etiquetar.
 
@@ -270,11 +313,13 @@ Algo como esto tendria que mostrarse en la terminal
 
 
 --> Tambien se puede crear una etiqueta que tenga un nombre en texto y no en numeros. Ejm:
-git tag -a alpha_0.1 15aaa33 -m "version alpha"
+  
+  git tag -a alpha_0.1 15aaa33 -m "version alpha"
 
 
 --> Pero que pasa si me equivoque en el etiquetado ejm: si hubiese querido etiquetar a otro commit. Solo debo de borrar la etiqueta y listo  
-git tag -d alpha_1.0
+  
+  git tag -d alpha_1.0
 
 
 ------------------------------------------	GITHUB (git clone) --------------------
@@ -290,21 +335,27 @@ New Repository > demo-repo  > Create Repository
 
 3. Creo un proyecto llamado folder2, despues dentro de folder2 creo un archivo prueba.html
 -->Inicializo un repositorio de Git
-git init
+  
+  git init
+  
 cat > prueba.html
 HolaMundo
 
 -->Agrego a la zona de stage prueba.html
-git add prueba.html
-git commit  -m "Primer commit"
+  
+  git add prueba.html
+  
+  git commit  -m "Primer commit"
 
 
 -->Como enlazar mi repositorio que he creado en GitHub a mi repositorio en local
-git remote add origin https://github.com/yadira123/demo-repo.git
+  
+  git remote add origin https://github.com/yadira123/demo-repo.git
 
 
 --> Ahora ejecutamos el ultimo comando
-git push -u origin master
+  
+  git push -u origin master
 
 -->Me pedirá el usuario y clave de mi cuenta en GitHub
 Username for 'https://github.com': yadira123
@@ -318,10 +369,12 @@ Escribo mi password y saldra los cambios y mis commit en mi repositorio en GitHu
 New > demo-repo2 > Create
 
 --> Hacemos el remote ya q ya no hay commits q hacer
-git remote add origin https://github.com/yadira123/demo_repo2.git
+  
+  git remote add origin https://github.com/yadira123/demo_repo2.git
 
 --> Hacemos el push
-git push -u origin master
+  
+  git push -u origin master
 
 
 
@@ -332,14 +385,17 @@ mkdir folder3
 cd folder3
 
 --> Hago Click en el boton Clone or Download de mi repositorio que quiero clonar y saldra una ruta, copio esa ruta, y en la terminal de git escribo lo sgte:
-git clone https://github.com/yadira123/demo_repo2.git
+  
+  git clone https://github.com/yadira123/demo_repo2.git
 
 --> y se empezara a copiar todo mi repositorio demo_repo2  a folder3. Entramos a esta carpeta demo_repo2 y modificaremos el archivo princ.html
 cd demo_repo2
 cat > princ.html
 <p>Hola Mundo</p>
-git add princ.html
-git commit  -m "se modificó princ.html"
+  
+  git add princ.html
+  
+  git commit  -m "se modificó princ.html"
 
 
 -->Ahora hacemos un push 
@@ -358,9 +414,12 @@ Para poder descargar los ultimos cambios que haigan podido surgir en nuestro rep
 
 --> Pero si hacemos un ls a la carpeta js/  vemos que no se ha agregado opcion.js. Entonces como hacemos para poder traer esa informacion?
 --> Existen dos comandos: git fetch y git pull
-git fetch: trae los cambios y despues tendriamos que hacerle un merge
-git pull:  es una forma mas practica de traer los cambios y que esos cambios se unan directamente a la rama principal(master)
-git pull
+  
+  git fetch: trae los cambios y despues tendriamos que hacerle un merge
+  
+  git pull:  es una forma mas practica de traer los cambios y que esos cambios se unan directamente a la rama principal(master)
+  
+  git pull
 
 -->Ahora si podemos ver al archivo opcion.js y si hacemos un git log --oneline --decorate --all --graph podemos ver el commit que hicimos en GitHub 
 
@@ -381,9 +440,12 @@ En muchas ocasiones podemos ver en GitHub algunos repositorios que son de nuestr
 git clone https://github.com/yadira123/diseno-web-componentes-php-2018.git
 
 3.2.  Vamos a modificar cualquier archivo
-git add .
-git commit -m "Se modifico el archivo index.php"
-git push origin master
+  
+  git add .
+  
+  git commit -m "Se modifico el archivo index.php"
+  
+  git push origin master
 
 --> Importante: Hacer el git push para que los cambios aparezcan en mi repositorio de GitHub y en local
 
@@ -402,9 +464,12 @@ cat > opcion.js
 alert('Esto agrego persiano13');
 
 -->Ahora hago el commit y el git push
-git add opcion.js
-git commit -m "Se agrego un alert a opcion.js"
-git push origin master
+  
+  git add opcion.js
+  
+  git commit -m "Se agrego un alert a opcion.js"
+  
+  git push origin master
 
 
 -->Ahora quiero que el cambio que he hecho se vea reflejado en el repositorio original que le pertenece a otro autor 
@@ -470,8 +535,3 @@ Click derecho en el proyecto > Git  > Remote > Push
 Seleccionamos Select Configured Git Repository Location
 
 * De esta forma mi proyecto se conectara con mi repositorio en GitHub, seleccionamos la rama  y Finish. Listo
-
-
-
-
-
