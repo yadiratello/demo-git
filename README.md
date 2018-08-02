@@ -147,13 +147,16 @@ reset --soft: vuelve un paso atras de nuestro cambio
 
 
                         	GITIGNORE     
------------------------------------------------------
+=======================================================================
 -->sirve para excluir ciertos archivos de nuestro proyecto q son innecesarios(ejm: archivos de configuracion(ide-config)).
 Para exluirlos solo debemos de crear un archivo con la extension .gitignore y debe de estar al mismo nivel de la carpeta .git
 abrimos este archivo y simplemente guardamos el nombre del archivo que queremos excluir.
 -->Escribir los siguientes comandos en la terminal de GIT
+
 touch .gitignore 
+
 cat .gitignore
+
 ide-config
 
 -->Estamos ignorando de nuestro proyecto los cambios que se realizen al archivo ide-config
@@ -161,12 +164,16 @@ ide-config
 
 22. Como decirle a GIT que no lleve el control de mis archivos q estan en la carpeta config y mis archivos .class
 --> Debemos de colocar en el archivo .gitignore lo siguiente: 
+
 cat .gitignore
+
 /config/ 
+
 .class
 
 
--------------------- RAMAS Y UNIONES ------------------------
+                             RAMAS Y UNIONES 
+                             
 -->Una rama viene a ser una division de tu trabajo actual con el objetivo de poder realizar en esa nueva division quizas algunos cambios q tal vez no estes seguro q formen parte de la rama principal.
 
 -->1er tipo de MERGE:
