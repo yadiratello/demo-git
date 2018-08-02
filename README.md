@@ -3,10 +3,11 @@
 COMANDOS
 -------------
 1. Mostrar la version de git instalado
+
 git --version
 
 
-2. Como autenticarme en la terminal
+2. Como autenticarme en la terminal.
 git config --global user.name "nombreUserGitHub"
 git config --global user.email "email@gmail.com"
 
