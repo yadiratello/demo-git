@@ -15,6 +15,11 @@
 3. Como verificar de quien es la maquina(quien esta logueado en esta terminal) obtiene las credenciales(name,email)
 ```  
   git config --global -l
+  
+  git config user.name
+  
+  git config user.email
+  
 ```
 
 4. Indicarle a GIT que carpeta sera mi repositorio(proyecto=repositorio)
