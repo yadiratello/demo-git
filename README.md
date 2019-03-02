@@ -1,7 +1,7 @@
 # 			GIT
 
 1. Mostrar la version de git instalado
-```console
+```bash
   git --version
 ```
 
