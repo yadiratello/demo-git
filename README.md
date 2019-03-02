@@ -1,7 +1,7 @@
 # 			GIT
 
 1. Mostrar la version de git instalado
-```shell
+```zsh
   git --version
 ```
 
